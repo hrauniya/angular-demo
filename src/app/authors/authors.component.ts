@@ -13,12 +13,14 @@ export class AuthorsComponent implements OnInit {
   //this list will normally be consumed through an API.
    authors:string[];
    noOfAuthors:number;
+   startingwJ:string[];
 
 
   constructor(service:AuthorsService) {
     //let service=new AuthorsService(); (tightly coupled service to Component), instead pass in the constructor (decoupling)
     this.authors=service.getAuthors(); 
     this.noOfAuthors=service.noofAuthors();
+    this.startingwJ= service.authorswJ();
    }
 
   ngOnInit(): void {
