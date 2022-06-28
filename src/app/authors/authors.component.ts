@@ -16,14 +16,19 @@ export class AuthorsComponent implements OnInit {
    startingwJ:string[];
 
 
-  constructor(service:AuthorsService) {
+  constructor(private service:AuthorsService) {
     //let service=new AuthorsService(); (tightly coupled service to Component), instead pass in the constructor (decoupling)
     this.authors=service.getAuthors(); 
     this.noOfAuthors=service.noofAuthors();
-    this.startingwJ= service.authorswJ();
+    this.startingwJ=[];
+    
    }
 
   ngOnInit(): void {
+  }
+  
+  startingwChar(char:string){
+    this.startingwJ=this.service.authorswJ(char)
   }
 
 }

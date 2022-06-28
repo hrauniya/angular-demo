@@ -6,7 +6,9 @@
 
 <p>There are {{noOfAuthors}} authors in this list! This was found using a service!<p>
 
-<p>Authors whose name starts with J are:</p>
+<p>Find the authors starting with a certain character!</p>
+<input #input type="text">
+<button type="button" (click)="startingwChar(input.value)">Submit Character</button>
 <ul>
     <li *ngFor="let authorswJ of startingwJ">
         {{authorswJ}}
