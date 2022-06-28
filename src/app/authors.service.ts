@@ -6,6 +6,8 @@ import { Injectable } from '@angular/core';
 export class AuthorsService {
   authors:string[]=["John Green","Stephen Hawking", "JK Rowling","Sidney Sheldon","Leo Tolstoy","Roald Dahl","JRR Tolkien"]
   result:string[]=[];
+  
+  
   //returns the list of Authors to the Component
   getAuthors(){
     return this.authors;
@@ -16,17 +18,12 @@ export class AuthorsService {
     return this.authors.length;
   }
 
-  authorswJ():string[]{
+  authorswJ(char:string):string[]{
     
     for (let i:number=0;i<this.authors.length;i++){
-      if (this.authors[i][0]=="J"){
+      if (this.authors[i][0]==char){
         this.result.push(this.authors[i]);
-
       }
-
-      
-
-
     }
 
     return this.result;
