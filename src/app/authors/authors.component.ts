@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthorsService } from '../authors.service';
+import {Authors} from '../authors'
 
 @Component({
   selector: 'app-authors',
@@ -11,9 +12,9 @@ export class AuthorsComponent implements OnInit {
   title="This is the Authors Component(Displays List of Authors)";
 
   //this list will normally be consumed through an API.
-   authors:string[];
+   authors:Authors[];
    noOfAuthors:number;
-   startingwJ:string[];
+   startingwJ:Authors[];
 
 
   constructor(private service:AuthorsService) {
@@ -28,6 +29,7 @@ export class AuthorsComponent implements OnInit {
   }
   
   startingwChar(char:string){
+    
     this.startingwJ=this.service.authorswJ(char)
   }
 
