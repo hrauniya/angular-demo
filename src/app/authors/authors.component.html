@@ -1,18 +1,34 @@
 <h2>{{title}}</h2>
 <ul>
     <li *ngFor="let author of authors">
-        {{author}}
+        {{author.name}}
     </li>
-
+</ul>
 <p>There are {{noOfAuthors}} authors in this list! This was found using a service!<p>
 
-<p>Find the authors starting with a certain character!</p>
+<p>Find the details of authors starting with a certain character!</p>
 <input #input type="text">
 <button type="button" (click)="startingwChar(input.value)">Submit Character</button>
-<ul>
+<!-- <ul>
     <li *ngFor="let authorswJ of startingwJ">
         {{authorswJ}}
     </li>
-</ul>
+</ul> -->
 
-</ul>
+<table border="1" width="1000">
+    <tr>
+      <td>Full Name</td>
+      <td>Birth Country</td>
+      <td>Number of Books</td>
+
+    </tr>
+    <tr *ngFor="let authorswJ of startingwJ">
+      <td>{{ authorswJ.name }}</td>
+      <td>{{ authorswJ.birthCountry}}</td>
+      <td>{{ authorswJ.noofBooks}}</td>
+      
+
+        
+    </tr>
+
+
